@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="RadialMenuZZ.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RadialMenuZZ"
+    xmlns:userControl="using:RadialMenuControl.UserControl"
+    xmlns:component="using:RadialMenuControl.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <userControl:Floating IsBoundByScreen="True">
+            <userControl:RadialMenu 
+                x:Name="MyRadialMenu"
+                InnerNormalColor="GreenYellow"
+                InnerHoverColor="Yellow"
+                InnerTappedColor="Red"
+                InnerReleasedColor="Azure"
+                OuterDisabledColor="Orange"
+                OuterHoverColor="Red"
+                OuterTappedColor="Azure"
+                OuterNormalColor="OrangeRed"
+                Diameter="300"
+                StartAngle="-36"
+                CenterButtonForeground="Blue"
+                CenterButtonFontSize="30"
+                CenterButtonIcon="&#x1f369;">
+                <userControl:RadialMenu.Buttons>
+                    <component:RadialMenuButton Icon="&#xE80F;" IconFontFamily="Segoe MDL2 Assets" Label="Submenu V" Type="Simple">
+                        <component:RadialMenuButton.Submenu>
+                            <userControl:RadialMenu x:Name="MyRadialSubmenu">
+                                <userControl:RadialMenu.Buttons>
+                                    <component:RadialMenuButton Icon="&#xE7F0;" IconFontFamily="Segoe MDL2 Assets" Label="New" Type="Simple"/>
+                                    <component:RadialMenuButton Icon="&#xE7EF;" IconFontFamily="Segoe MDL2 Assets" Label="Open" Type="Simple"/>
+                                    <component:RadialMenuButton Icon="&#xE8B4;" IconFontFamily="Segoe MDL2 Assets" Label="Save" Type="Simple"/>
+                                </userControl:RadialMenu.Buttons>
+                            </userControl:RadialMenu>
+                        </component:RadialMenuButton.Submenu>
+                    </component:RadialMenuButton>
+                    <component:RadialMenuButton Icon="&#xE899;" IconFontFamily="Segoe MDL2 Assets" Label="Meter V" Type="Simple"/>
+                    <component:RadialMenuButton Icon="&#xE774;" IconFontFamily="Segoe MDL2 Assets" Label="Toggle V" Type="Toggle"/>
+                    <component:RadialMenuButton Icon="&#xE77C;" IconFontFamily="Segoe MDL2 Assets" Label="Radio V1" Type="Radio"/>
+                    <component:RadialMenuButton Icon="&#xE8B8;" IconFontFamily="Segoe MDL2 Assets" Label="Radio V2" Type="Radio"/>
+                </userControl:RadialMenu.Buttons>
+            </userControl:RadialMenu>
+        </userControl:Floating>
+        
+    </Grid>
+</Page>
